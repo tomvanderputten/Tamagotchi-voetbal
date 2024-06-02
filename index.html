@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tamagotchi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <img id="startbutton" src="images/start-button.png" alt="Start">
+
+    <img class="hidden" id="gameover" src="images/gameover.png" alt="gameover">
+    <img class="hidden" id="restart" src="images/restart.png" alt="restart">
+
+    <div id="game-container" class="hidden">
+
+        <div class="progress-container">
+            <img class="bar-title" src="images/fitness-bar.png" alt="fitness bar">
+            <progress id="fitness" value="100" max="100"></progress>
+        </div>
+
+        <div class="progress-container">
+            <img class="bar-title" src="images/hunger-bar.png" alt="hunger bar">
+            <progress id="hunger" value="100" max="100"></progress>
+        </div>
+
+        <div class="progress-container">
+            <img class="bar-title" src="images/energy-bar.png" alt="energy bar">
+            <progress id="energy" value="100" max="100"></progress>
+        </div>
+
+        <img id="train-button" src="images/train-button.png" alt="train button" class="hidden">
+        <img id="eat-button" src="images/eat-button.png" alt="eat button" class="hidden">
+        <img id="rest-button" src="images/rest-icon.png" alt="rest button" class="hidden">
+
+        <img id="boy1" src="images/happy-boy.png" alt="happy boy" class="hidden">
+
+    </div>
+
+
+
+
+    
+
+
+    <script src="script.js" ></script>
+</body>
+</html>
