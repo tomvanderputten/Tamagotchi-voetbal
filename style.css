@@ -3,7 +3,8 @@
 }
 
 body{
-    background-image: url(images/stadion-background.png);
+    background-image: url(images/stadion-background.png); 
+    /* https://www.vecteezy.com/vector-art/3095550-fish-eye-view-of-a-football-stadium-background */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

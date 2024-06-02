@@ -1,5 +1,3 @@
-console.log("hoi")
-
 const startButton = document.querySelector("#startbutton")
 const gameContainer = document.querySelector("#game-container")
 const gameover = document.querySelector("#gameover")
@@ -15,39 +13,39 @@ const fitnessbar = document.querySelector("#fitness")
 const hungerBar = document.querySelector("#hunger")
 const energyBar = document.querySelector("#energy")
 
-
 let fitnessvalue = 100
 let hungervalue = 100
 let energyvalue = 100
 
 //https://chatgpt.com/share/c06a2e98-ce2f-4314-8cf6-1c9d68c3da40 : eigen onderzoek, gevraagd hoe het moet en op eigen manier uitgevoerd
-const sound1 = new Audio('mp3/happy1.MP3') //https://youtu.be/cUM8OCBy6Ls?si=fG6-3QV7WVsO5B7q
-const sound2 = new Audio('mp3/shocked1.MP3') //https://youtu.be/ltjT25GyXTM?si=OFGRBqttKF1ooAjy
-const sound3 = new Audio('mp3/sad1.MP3') //https://youtu.be/Ncgv7ruZ6HU?si=s1TjQYzE-I-MqZ2N
-const sound4 = new Audio('mp3/angry1.MP3') //https://youtu.be/UVEGnWdiPrI?si=jwQ1QkSzIcruIJgg
-const sound5 = new Audio('mp3/dead1.MP3') //https://youtu.be/eXdJYdCqdgE?si=qDef2wRCxSHlmB7c
+const sound1 = new Audio("mp3/happy1.MP3") //https://youtu.be/cUM8OCBy6Ls?si=fG6-3QV7WVsO5B7q
+const sound2 = new Audio("mp3/shocked1.MP3") //https://youtu.be/ltjT25GyXTM?si=OFGRBqttKF1ooAjy
+const sound3 = new Audio("mp3/sad1.MP3") //https://youtu.be/Ncgv7ruZ6HU?si=s1TjQYzE-I-MqZ2N
+const sound4 = new Audio("mp3/angry1.MP3") //https://youtu.be/UVEGnWdiPrI?si=jwQ1QkSzIcruIJgg
+const sound5 = new Audio("mp3/dead1.MP3") //https://youtu.be/eXdJYdCqdgE?si=qDef2wRCxSHlmB7c
+//---
 
 //https://chatgpt.com/share/f73472a4-cafc-4eff-873f-efc23dc2e005 kennis uit les gebruikt samen met chatgpt en eerder geschreven code
 function startGame() {
-    gameContainer.classList.remove('hidden')
-    startButton.style.display = 'none'
+    gameContainer.classList.remove("hidden")
+    startButton.style.display = "none"
 
-    trainButton.classList.remove('hidden')
-    eatButton.classList.remove('hidden')
-    restButton.classList.remove('hidden')
-    boy.classList.remove('hidden')
+    trainButton.classList.remove("hidden")
+    eatButton.classList.remove("hidden")
+    restButton.classList.remove("hidden")
+    boy.classList.remove("hidden")
 
     const fitnessInterval = setInterval(decreaseFitness, 500)
     const hungerInterval = setInterval(decreaseHunger, 500)
     const energyInterval = setInterval(decreaseEnergy, 500)
 
-    trainButton.addEventListener('click', increaseTrain)
-    eatButton.addEventListener('click', increaseHunger)
-    restButton.addEventListener('click', increaseEnergy)
+    trainButton.addEventListener("click", increaseTrain)
+    eatButton.addEventListener("click", increaseHunger)
+    restButton.addEventListener("click", increaseEnergy)
 }
 
-startButton.addEventListener('click', startGame)
-//----
+startButton.addEventListener("click", startGame)
+//---
 
 
 function decreaseFitness() {
@@ -59,7 +57,6 @@ function decreaseFitness() {
 
     updateImage()
 }
-
 
 
 function increaseTrain() {
@@ -81,8 +78,6 @@ function increaseTrain() {
 
     updateImage()
 }
-
-
 
 
 function decreaseHunger() {
@@ -117,9 +112,6 @@ function increaseHunger() {
 }
 
 
-
-
-
 function decreaseEnergy() {
     energyvalue = energyvalue - 0.5
     if (energyvalue < 0) {
@@ -129,7 +121,6 @@ function decreaseEnergy() {
 
     updateImage()
 }
-
 
 
 function increaseEnergy() {
@@ -163,9 +154,9 @@ function updateImage() {
         sound5.play()
         gameover.classList.remove("hidden")
         restart.classList.remove("hidden")
-        trainButton.classList.add('hidden')
-        eatButton.classList.add('hidden')
-        restButton.classList.add('hidden')
+        trainButton.classList.add("hidden")
+        eatButton.classList.add("hidden")
+        restButton.classList.add("hidden")
     } else if (fitnessvalue <= 25 && fitnessvalue >= 0.1 || 
         hungervalue <= 25 && hungervalue >= 0.1 || 
         energyvalue <= 25 && energyvalue >= 0.1) {
@@ -186,7 +177,7 @@ function updateImage() {
         sound1.play()
     }
 }
-//-----
+//---
 
 //https://chatgpt.com/share/e6e92322-0e4a-410a-8f45-1908fbe6c260
 function reload(){
@@ -194,3 +185,4 @@ function reload(){
 }
 
 restart.addEventListener("click", reload)
+//---
